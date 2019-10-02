@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "UrlLink";
+}
+
+<h2>UrlLink</h2>
+
+<a href="/Home/RazorSyntax">Razor View Engine görüntüle</a> <br /><br />
+<hr />
+@Html.ActionLink("Razor sayfasına git", "RazorSyntax", "Home",new { title="sayfaya git"}) <br />
+<hr />
+<a id="link1" name="link1" href=@Url.Action("RazorSyntax", "Home", null)>Url Action ile Razor sayfasına git</a>
+<hr />
+@Url.Action("HtmlHelpers") <br />
+@Url.Content("~/Home/HtmlHelpers") <br />
+@Url.Encode("~/Home/HtmlHelpers?arama=yunus önal") @*özel karakterlerin linki bozmaması adına encode kullanılır.*@
+

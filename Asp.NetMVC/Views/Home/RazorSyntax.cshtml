@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "RazorSyntax";
+}
+
+<h2>RazorSyntax</h2>
+
+@{
+    string name = "Yunus";
+    string surname = "Önal";
+    string fullname = name + " " + surname;
+
+    <ul>
+        <li>
+            @name
+        </li>
+        <li>
+            @surname
+        </li>
+        <li>
+            <i>@fullname</i>
+        </li>
+    </ul>
+}
+
+<hr />
+
+@name
+<br />
+@surname
+<br />
+<b>@fullname</b>
+
+<hr />
+
+@{
+    string[] names = new string[4] { "Ali", "Veli", "Ayşe", "Senay" };
+    int index = 0;
+
+    <ul>
+        @foreach (var name2 in names)
+        {
+            <li>
+                @if (index % 2 == 0)
+                {
+                    @name2 <br />
+
+                }
+                else
+                {
+                    @name2
+                }
+            </li>
+            index++;
+        }
+    </ul>
+}
+    <hr />
+
+@for (int i = 0; i <= 10; i++)
+{
+    @("Sayı: " + i.ToString()) <br />
+}
+

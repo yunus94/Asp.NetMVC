@@ -124,6 +124,7 @@
     <Content Include="Views\Home\HtmlHelpers.cshtml" />
     <Content Include="Views\Home\CustomHtmlHelpers.cshtml" />
     <Content Include="Views\Home\UrlLink.cshtml" />
+    <Content Include="Views\Home\HttpUtility.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

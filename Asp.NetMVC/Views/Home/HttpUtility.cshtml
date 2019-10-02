@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "HttpUtility";
+}
+
+<h2>HttpUtility</h2>
+
+@HttpUtility.HtmlEncode("<b>Yunus Önal</b>") <br /> @*html taglarını özel karakterlerle şifreler*@
+@HttpUtility.HtmlDecode("&lt;b&gt;Yunus &#214;nal&lt;/b&gt;") <br /> @*Şifrelenmiş html taglarını normal karakterlere dönüştürür *@
+<hr />
+@Html.Raw("<b>Yunus Önal</b>") @*html taglarını göstermezken html taglarını görüntüleyebilirsiniz.*@
+<hr />
+@Html.Raw("<script type='text/javascript'>alert('Başarılı giriş '); </script>") 
+<hr />
+@Html.Raw("<style> h2 {color:blue;} </style>")

@@ -25,5 +25,9 @@ namespace Asp.NetMVC.Controllers
         {
             return View();
         }
+        public ActionResult HttpUtility()
+        {
+            return View();
+        }
     }
 }

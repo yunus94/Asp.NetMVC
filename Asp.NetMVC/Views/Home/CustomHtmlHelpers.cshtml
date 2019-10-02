@@ -1,0 +1,21 @@
+﻿@using Asp.NetMVC.Library
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CustomHtmlHelpers</title>
+</head>
+<body>
+    <div>
+        @Html.Button("btn1", ButtonType.button, "Tamam") <br /><br />
+        @Html.Button("btn2", "btn btn-success", ButtonType.submit, "İptal")
+        <hr />
+        @Html.Paragraph("p1",5,"dashed",@<text> <b style="color:blue;">Custom html helper ile oluşturuldu.</b></text>)
+    </div>
+</body>
+</html>

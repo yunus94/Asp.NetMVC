@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "HtmlHelpers";
+}
+
+<h2>HtmlHelpers</h2>
+
+
+@{
+    ViewBag.Title = "HtmlHelpers";
+}
+
+<h2>HtmlHelpers</h2>
+
+<style>
+    .kirmizi {
+        color: red;
+    }
+</style>
+
+<input type="text" name="text1" id="text1" />  <br />
+<input type="button" name="button1" id="button1" value="Tamam" /> <br /><br />
+<a href="/Home/RazorSyntax">Razor örneklerine git</a> <br />
+
+<hr />
+
+@Html.ActionLink("RazorSyntax sayfasına git", "RazorSyntax", "Home", new { fullname = "yunusonal" }, new { title = "Yönlendirme Linki", @class = "kirmizi" }) <br /> <br />
+@Html.Label("label1", "Adınız Soyadınız")
+@Html.TextBox("text2") <br /><br />
+@Html.Label("label1", "Özgeçmiş özetiniz")
+@Html.TextArea("textarea1", "", 8, 20, null) <br />
+<input type="button" name="button2" id="button2" value="Tamam" /> <br />
+
+
+

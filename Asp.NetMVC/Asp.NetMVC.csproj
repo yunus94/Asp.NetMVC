@@ -133,6 +133,8 @@
     <Content Include="Views\Shared\_LayoutPage2.cshtml" />
     <Content Include="Views\Shared\_LayoutPage3.cshtml" />
     <Content Include="Views\Views\About2.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage4.cshtml" />
+    <Content Include="Views\Views\SectionLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

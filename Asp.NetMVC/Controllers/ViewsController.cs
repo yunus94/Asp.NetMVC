@@ -24,5 +24,10 @@ namespace Asp.NetMVC.Controllers
         {
             return View();
         }
+        public ActionResult SectionLayout()
+        {
+            return View();
+        }
+
     }
 }

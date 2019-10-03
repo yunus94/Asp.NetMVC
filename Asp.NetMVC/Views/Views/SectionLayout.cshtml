@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "SectionLayout";
+    Layout = "~/Views/Shared/_LayoutPage4.cshtml";
+}
+
+<h2>SectionLayout</h2>
+
+<p>
+    Section layout ile tüm sayfalarda ortak olan  header ve footer kısımlarına bazı sayfalarda
+    ihtiyaç duyabileceğiz yeni linkler ve footerlar ekleyebiliriz.
+</p>
+
+@section Link{
+    <li>
+           @Html.ActionLink("Section","SectionLayout","Views")
+    </li>
+}
+
+@section Footer{
+    <b>Sayfa kopyalanamaz!</b>
+}
+

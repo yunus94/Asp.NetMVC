@@ -11,15 +11,16 @@
     <title>HomePage</title>
 </head>
 <body>
-    
+
     <div>
         @{
-            SelectListItem[] List = new SelectListItem[3]
+            SelectListItem[] List = new SelectListItem[4]
             {
             new SelectListItem() {Text="Yalova",Value="Y"}, @*Eğer value ları yazmamış olsaydık controller tarafından bize dönen değer text olacaktı.*@
-                                                new SelectListItem() {Text="Aydın",Value="A"},
-                                                new SelectListItem() {Text="Karabük",Value="K"}
-                                                };
+            new SelectListItem() {Text="Aydın",Value="A"},
+            new SelectListItem() {Text="Karabük",Value="K"},
+            new SelectListItem() {Text="Ankara",Value="An"}
+                                                            };
         }
 
         @using (Html.BeginForm())

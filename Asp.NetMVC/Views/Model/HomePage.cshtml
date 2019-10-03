@@ -1,0 +1,43 @@
+﻿@model Asp.NetMVC.ViewsModels.HomePageViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HomePage</title>
+</head>
+<body>
+    <div>
+        <h2>Ana Sayfa</h2>
+        <hr />
+    </div>
+    <div>
+        <b>Ad:</b> @Model.Persons.Name <br />
+        <b>Soyad:</b> @Model.Persons.Surname <br />
+        <b>Yaş:</b> @Model.Persons.Age
+        <hr />
+        <b>Ad Soyad:</b>@(Model.Persons.Name + " " + @Model.Persons.Surname)
+        <hr />
+        <b>Adres:</b>@(Model.Addresss.AddressDefinition + " / " + Model.Addresss.City))
+    </div>
+    <hr />
+    <div>
+        @using (Html.BeginForm())
+        {
+            <b>İsim:</b> @Html.TextBoxFor(model => model.Persons.Name)
+            <b>Soyisim:</b> @Html.TextBoxFor(model => model.Persons.Surname)
+            <b>Yaş:</b> @Html.TextBoxFor(model => model.Persons.Age)
+            <b>Adres:</b> @Html.TextBoxFor(model => model.Addresss.AddressDefinition)
+            <b>Şehir:</b> @Html.TextBoxFor(model => model.Addresss.City)
+
+            <hr />
+
+            <input type="submit" name="" value="Gönder" />
+        }
+    </div>
+</body>
+</html>

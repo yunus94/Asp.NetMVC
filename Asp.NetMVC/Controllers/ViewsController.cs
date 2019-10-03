@@ -20,5 +20,9 @@ namespace Asp.NetMVC.Controllers
         {
             return View();
         }
+        public ActionResult About2()
+        {
+            return View();
+        }
     }
 }

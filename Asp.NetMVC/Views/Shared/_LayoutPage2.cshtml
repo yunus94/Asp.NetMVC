@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        .block {
+            display: block;
+            margin: 10px;
+            border: 2px dotted #0026ff;
+            padding: 10px;
+        }
+
+        #menu ul li {
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid #b6ff00;
+            background-color: brown;
+            margin: 5px;
+            line-height: 30px;
+            vertical-align: middle;
+        }
+
+        #menu a {
+            color: aliceblue;
+            text-decoration: none;
+            font-size: smaller;
+        }
+
+        #menu li:hover {
+            background-color: aquamarine;
+        }
+
+        #menu li:hover {
+            color: blue;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="block">
+        <h2>Yunus Önal blog sitesi </h2><hr />
+        <h4>Her gün yeni bir bilgi.</h4>
+    </div>
+
+    <div class="block">
+        <p>Önümüzde uzun bir yol var. Daha azimli ve istekli çalışacağız.</p>
+    </div>
+
+    <div class="block">
+        @RenderBody()
+    </div>
+
+    <div id="menu" class="block">
+        <ul>
+            <li>@Html.ActionLink("Ana Sayfa", "HomePage", "Views")</li>
+            <li>@Html.ActionLink("Hakkımızda", "About", "Views")</li>
+            <li>@Html.ActionLink("İletişim", "Contact", "Views")</li>
+        </ul>
+    </div>
+
+    <div class="block">
+        <b>Tüm hakları saklıdır. &copy;</b>
+    </div>
+</body>
+</html>

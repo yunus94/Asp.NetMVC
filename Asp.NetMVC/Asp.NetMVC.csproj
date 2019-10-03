@@ -138,6 +138,7 @@
     <Content Include="Views\Views\SectionLayout.cshtml" />
     <Content Include="Views\Shared\_PartialOtherLink.cshtml" />
     <Content Include="Views\ControllerToView\Index.cshtml" />
+    <Content Include="Views\ControllerToView\HomePage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

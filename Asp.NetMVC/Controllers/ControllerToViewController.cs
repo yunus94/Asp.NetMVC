@@ -29,5 +29,19 @@ namespace Asp.NetMVC.Controllers
             };
             return View();
         }
+
+        public ActionResult HomePage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult HomePage(string Name, bool Check, string list1)
+        {
+            //var n1 = Request.Form["Name"];
+            //var l1 = Request.Form["list1"];
+            //var c1 = Request.Form.GetValues("Check")[0];  //Seçili durumu başa alır. Checkbox işaretliyse True,False , işaretli değilse False,true yapar.
+            return View();
+        }
     }
 }

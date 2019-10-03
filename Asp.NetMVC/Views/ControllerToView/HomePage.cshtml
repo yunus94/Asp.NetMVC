@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HomePage</title>
+</head>
+<body>
+    
+    <div>
+        @{
+            SelectListItem[] List = new SelectListItem[3]
+            {
+            new SelectListItem() {Text="Yalova",Value="Y"}, @*Eğer value ları yazmamış olsaydık controller tarafından bize dönen değer text olacaktı.*@
+                                                new SelectListItem() {Text="Aydın",Value="A"},
+                                                new SelectListItem() {Text="Karabük",Value="K"}
+                                                };
+        }
+
+        @using (Html.BeginForm())
+        {
+            @("İsim : ") @Html.TextBox("Name") <br /> <br />
+            @("Şehir : ") @Html.DropDownList("list1", List) <br /><br />
+            @("Onaylıyorum ") @Html.CheckBox("Check")
+            <hr />
+            <input type="submit" value="Gönder" />
+        }
+    </div>
+</body>
+</html>

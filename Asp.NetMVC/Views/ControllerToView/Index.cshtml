@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h2>Kullanıcı Bilgileri</h2>
+        <hr />
+    </div>
+
+    <div>
+        @*<b>İsim Soyisim=</b> @ViewData["FullName"] <br />
+        <b>Bool veri türü=</b>@ViewData["Check"] <br />*@
+
+        @*<b>İsim Soyisim=</b> @TempData["FullName"] <br />
+        <b>Bool veri türü=</b>@TempData["Check"] <br />*@
+
+        <b>İsim Soyisim=</b> @ViewBag.FullName <br />
+        <b>Bool veri türü=</b>@ViewBag.Check
+    </div>
+    <hr />
+    <div>
+        <b>İsim Soyisim=</b> @Html.TextBox("FullName")  <br />  @*parantez içine controller da yazdığımız viewbag ismini yazarsakta veriyi getirebiliriz. *@
+        <b>Bool veri türü=</b>@Html.CheckBox("Check") <br />
+        <b>Şehir seçim=</b>@Html.DropDownList("List")
+    </div>
+</body>
+</html>

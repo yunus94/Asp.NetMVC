@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ControllerToViewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ViewsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -136,6 +137,7 @@
     <Content Include="Views\Shared\_LayoutPage4.cshtml" />
     <Content Include="Views\Views\SectionLayout.cshtml" />
     <Content Include="Views\Shared\_PartialOtherLink.cshtml" />
+    <Content Include="Views\ControllerToView\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

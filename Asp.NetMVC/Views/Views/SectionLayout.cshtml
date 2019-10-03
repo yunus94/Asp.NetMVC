@@ -5,17 +5,24 @@
 }
 
 <h2>SectionLayout</h2>
+@Html.Partial("_PartialOtherLink")
+<hr />
+@*@{ 
+    Html.RenderPartial("_PartialOtherLink");   farklı bir kullanım.
+}*@
 
 <p>
     Section layout ile tüm sayfalarda ortak olan  header ve footer kısımlarına bazı sayfalarda
     ihtiyaç duyabileceğiz yeni linkler ve footerlar ekleyebiliriz.
 </p>
+@Html.Partial("_PartialOtherLink")
 
 @section Link{
     <li>
-           @Html.ActionLink("Section","SectionLayout","Views")
+        @Html.ActionLink("Section", "SectionLayout", "Views")
     </li>
 }
+
 
 @section Footer{
     <b>Sayfa kopyalanamaz!</b>

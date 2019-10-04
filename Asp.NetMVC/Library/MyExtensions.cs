@@ -32,6 +32,17 @@ namespace Asp.NetMVC.Library
             string html = string.Format("<p id='{0}' name='{0}' style ='border-width:{1}px;border-style:{2}'>{3}</p>", id, borderSize,borderType, template.Invoke(null));
             return MvcHtmlString.Create(html);
         }
+
+        //custon helper.cshtml için
+        public static MvcHtmlString Alert(this HtmlHelper helper, string id = "alert1", string color = "success", string text = "")
+        {
+            TagBuilder tag = new TagBuilder("div");
+            tag.AddCssClass("alert alert-" + color);
+            tag.GenerateId(id);
+            tag.Attributes.Add(new KeyValuePair<string, string>("role", "alert"));
+            tag.SetInnerText(text);
+            return MvcHtmlString.Create(tag.ToString());
+        }
     }
     public enum ButtonType
         {
@@ -39,4 +50,6 @@ namespace Asp.NetMVC.Library
             submit=1,
             reset=2
         }
+
+   
 }

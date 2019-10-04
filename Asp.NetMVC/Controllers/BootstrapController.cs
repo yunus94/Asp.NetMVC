@@ -17,5 +17,9 @@ namespace Asp.NetMVC.Controllers
         {
             return View();
         }
+        public ActionResult CustomHelper()
+        {
+            return View();
+        }
     }
 }

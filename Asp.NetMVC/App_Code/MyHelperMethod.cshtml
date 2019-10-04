@@ -1,0 +1,53 @@
+﻿@helper Input(string name, string typ, string val)
+{
+    <input type="@typ" name="@name" id="@name" value="@val" />
+}
+@helper Table(string name, int rows, int columns, params string[] headers)
+{
+    <table id="@name" name="@name" border="1">
+        <tr>
+            @for (int i = 0; i < columns; i++)
+            {
+                <th>
+                    @headers[i]
+                </th>
+            }
+        </tr>
+
+        @for (int i = 0; i < rows; i++)
+        {
+            <tr>
+                @for (int j = 0; j < columns; j++)
+                {
+                    <td>
+                        @("(" + j.ToString() + "," + i.ToString() + ")")
+                    </td>
+
+                }
+            </tr>
+
+        }
+
+    </table>
+}
+@helper Tag(string color = "warning", string text = "")
+{
+    <span class="label label-@color">@text</span>@:&nbsp;
+}
+
+@helper Button(string name = "Button1", string href = "#", string color = "danger", string size = "xs", string val = "")
+{
+    <a id="@name" name="@name" href="@href" class="btn btn-@color btn-@size">@val...</a>
+}
+
+@helper LinkList(string name, params string[] LinkTest)
+{
+    <ul id="@name" name="@name">
+        @for (int i = 0; i < LinkTest.Length; i++)
+        {
+            <li>
+                <a href="#">@LinkTest[i]</a>
+            </li>
+        }
+    </ul>
+}

@@ -63,13 +63,18 @@
                     <div class="panel-body">
                         <p>
                             dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.
-                            <a href="#" class="btn btn-danger btn-xs">More...</a>
+                            @*<a href="#" class="btn btn-danger btn-xs">More...</a>*@
+                            @MyHelperMethod.Button(val:"More...")
                         </p>
                     </div>
                     <div class="panel-footer">
-                        <span class="label label-warning">HashTag1</span>&nbsp;
+                        @for (int i = 0; i < 3; i++)
+                        {
+                            @MyHelperMethod.Tag(text:"Hashtag"+i.ToString())
+                        }
+                        @*<span class="label label-warning">HashTag1</span>&nbsp;
                         <span class="label label-warning">HashTag2</span>&nbsp;
-                        <span class="label label-warning">HashTag3</span>&nbsp;
+                        <span class="label label-warning">HashTag3</span>&nbsp;*@
                     </div>
                 </div>
 
@@ -81,13 +86,14 @@
                     <div class="panel-body">
                         <p>
                             dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.
-                            <a href="#" class="btn btn-danger btn-xs">More...</a>
+                            @MyHelperMethod.Button(val: "More...")
                         </p>
                     </div>
                     <div class="panel-footer">
-                        <span class="label label-warning">HashTag1</span>&nbsp;
-                        <span class="label label-warning">HashTag2</span>&nbsp;
-                        <span class="label label-warning">HashTag3</span>&nbsp;
+                        @for (int i = 0; i < 3; i++)
+                        {
+                            @MyHelperMethod.Tag(color: "primary", text: "Hashtag" + i.ToString())
+                        }
                     </div>
                 </div>
                 <div class="panel panel-default">
@@ -97,13 +103,14 @@
                     <div class="panel-body">
                         <p>
                             dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.
-                            <a href="#" class="btn btn-danger btn-xs">More...</a>
+                            @MyHelperMethod.Button(val: "More...")
                         </p>
                     </div>
                     <div class="panel-footer">
-                        <span class="label label-warning">HashTag1</span>&nbsp;
-                        <span class="label label-warning">HashTag2</span>&nbsp;
-                        <span class="label label-warning">HashTag3</span>&nbsp;
+                        @for (int i = 0; i < 3; i++)
+                        {
+                            @MyHelperMethod.Tag(color: "danger", text: "Hashtag" + i.ToString())
+                        }
                     </div>
                 </div>
 
@@ -111,7 +118,7 @@
             <div class="col-md-3">
                 <h2>Kategoriler</h2>
                 <hr />
-                <ul>
+                @*<ul>
                     <li>
                         <a href="#">Kategori</a>
                     </li>
@@ -124,7 +131,9 @@
                     <li>
                         <a href="#">Kategori4</a>
                     </li>
-                </ul>
+                </ul>*@
+
+                @MyHelperMethod.LinkList("Link1","Kategori1", "Kategori2", "Kategori3", "Kategori4", "Kategori5")
             </div>
 
         </div>

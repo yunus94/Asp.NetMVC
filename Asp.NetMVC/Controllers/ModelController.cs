@@ -1,4 +1,5 @@
 ﻿using Asp.NetMVC.Models;
+using Asp.NetMVC.ViewsModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,15 @@ namespace Asp.NetMVC.Controllers
             person.Name = "Yunus";
             person.Surname = "ÖNAL";
             person.Age = 25;
-            return View(person);
+
+            Address address = new Address();
+            address.AddressDefinition = "Deneme adresi.";
+            address.City = "Malatya";
+
+            HomePageViewModel mod = new HomePageViewModel();
+            mod.Persons = person;
+            mod.Addresss = address;
+            return View(mod);
         }
         [HttpPost]
         public ActionResult HomePage(Person p)

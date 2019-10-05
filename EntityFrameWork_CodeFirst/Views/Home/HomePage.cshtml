@@ -1,0 +1,18 @@
+﻿@using EntityFrameWork_CodeFirst.Models
+@model IEnumerable<Person>
+@{
+    ViewBag.Title = "HomePage";
+}
+
+<h2>Ana Sayfa</h2>
+<ul>
+    @foreach (var a in Model)
+    {
+        <li>
+            @(a.Name + " " + a.SurName)
+        </li>
+    }
+
+</ul>
+
+

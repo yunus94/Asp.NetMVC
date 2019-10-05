@@ -64,7 +64,6 @@ C:\Users\yunus\source\repos\Asp.NetMVC\Asp.NetMVC\bin\System.Web.Webpages.Razor.
 C:\Users\yunus\source\repos\Asp.NetMVC\Asp.NetMVC\bin\System.Web.Helpers.xml
 C:\Users\yunus\source\repos\Asp.NetMVC\Asp.NetMVC\bin\System.Web.Mvc.xml
 C:\Users\yunus\source\repos\Asp.NetMVC\Asp.NetMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\yunus\source\repos\Asp.NetMVC\Asp.NetMVC\obj\Debug\Asp.NetMVC.csprojAssemblyReference.cache
 C:\Users\yunus\source\repos\Asp.NetMVC\Asp.NetMVC\obj\Debug\Asp.NetMVC.csproj.CoreCompileInputs.cache
 C:\Users\yunus\source\repos\Asp.NetMVC\Asp.NetMVC\obj\Debug\Asp.NetMVC.csproj.CopyComplete
 C:\Users\yunus\source\repos\Asp.NetMVC\Asp.NetMVC\obj\Debug\Asp.NetMVC.dll

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Asp.NetMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,7 +20,12 @@ namespace Asp.NetMVC.Controllers
         }
         public ActionResult CustomHelper()
         {
-            return View();
+            List<Message> messages = new List<Message>();
+            messages.Add(new Message { Level = 1, Text = "Uyarı mesajı" });
+            messages.Add(new Message { Level = 2, Text = "Uyarı mesajı2" });
+            messages.Add(new Message { Level = 3, Text = "Uyarı mesajı3" });
+            return View(messages);
         }
+        
     }
 }

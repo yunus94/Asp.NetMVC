@@ -1,4 +1,5 @@
 ﻿@using Asp.NetMVC.Library
+@using Asp.NetMVC.Models
 @{
     Layout = null;
 }
@@ -15,7 +16,13 @@
     <div class="container">
         <br />
         <br />
-        @Html.Alert("alert1","danger","Bu bir uyarıdır. Sayfada gezinirken asla kopyalama yapmayın!")
+        @Html.Alert("alert1","info","Bu bir uyarıdır. Sayfada gezinirken asla kopyalama yapmayın!")
+        <hr />
+
+        @foreach (Message item in Model)
+        {
+            @Html.AlertFor(x=>item, new { title=item.Text,level=item.Level})
+        }
     </div>
 </body>
 </html>

@@ -1,18 +1,51 @@
-﻿@using EntityFrameWork_CodeFirst.Models
-@model IEnumerable<Person>
+﻿@using EntityFrameWork_CodeFirst.ViewModels.Home
+@model HomePageViewModel
 @{
     ViewBag.Title = "HomePage";
 }
 
-<h2>Ana Sayfa</h2>
-<ul>
-    @foreach (var a in Model)
-    {
-        <li>
-            @(a.Name + " " + a.SurName)
-        </li>
-    }
 
-</ul>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Ana Sayfa</h2>
+            <hr />
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item active">
+                    Kişiler
+                </li>
+                @foreach (var a in Model.Persons)
+                {
+                    <li class="list-group-item">
+                        @(a.Name + " " + a.SurName) (<i>@a.Age</i>)
+                    </li>
+                }
+
+            </ul>
+        </div>
+        <div class="col-md-6">
+           
+            <ul class="list-group">
+                <li class="list-group-item active">
+                    Adresler
+                </li>
+                @foreach (var a in Model.Addresses)
+                {
+                    <li class="list-group-item">
+                        @a.AddressDefinition (<i>@(a.Persons.Name+" "+a.Persons.SurName)</i>)
+                    </li>
+                }
+
+            </ul>
+        </div>
+
+    </div>
+</div>
+
 
 

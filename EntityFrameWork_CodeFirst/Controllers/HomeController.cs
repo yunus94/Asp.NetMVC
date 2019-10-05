@@ -1,5 +1,6 @@
 ﻿using EntityFrameWork_CodeFirst.Models;
 using EntityFrameWork_CodeFirst.Models.Database_Manager;
+using EntityFrameWork_CodeFirst.ViewModels.Home;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,12 @@ namespace EntityFrameWork_CodeFirst.Controllers
         public ActionResult HomePage()
         {
             DataBaseContext db = new DataBaseContext();
-            List<Person> persona =db.Persons.ToList();
-            return View(persona);
+            //List<Person> person =db.Persons.ToList();
+
+            HomePageViewModel model = new HomePageViewModel();
+            model.Persons = db.Persons.ToList();
+            model.Addresses = db.Addresses.ToList();
+            return View(model);
         }
     }
 }

@@ -26,6 +26,11 @@ namespace Asp.NetMVC.Controllers
             messages.Add(new Message { Level = 3, Text = "Uyarı mesajı3" });
             return View(messages);
         }
+
+        public ActionResult AnimasyonCheckBox()
+        {
+            return View();
+        }
         
     }
 }

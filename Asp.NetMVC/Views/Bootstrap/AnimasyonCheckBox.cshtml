@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AnimasyonCheckBox</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/AnimatedCheckbox.css" rel="stylesheet" />
+</head>
+<body>
+    <div class=" container">
+        <div class=" row">
+            <div class="col-md-12">
+                <h2>Animated Radio & Checkboxes With NoJS</h2>
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-horizontal">
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            Ödeme Durumu=
+                        </label>
+                        <div class="col-md-10 checkbox">
+                            <label>
+                                @Html.CheckBox("odendimi", false)
+                                <span class="cr">
+                                    <i class="cr-icon glyphicon glyphicon-ok"></i>
+                                </span>
+                                <span>Ödendi mi?</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            Borç Durumu=
+                        </label>
+                        <div class="col-md-10 checkbox">
+                            <label>
+                                @Html.CheckBox("borc", false)
+                                <span class="cr">
+                                    <i class="cr-icon glyphicon glyphicon-ok"></i>
+                                </span>
+                                <span>Borcu var mı?</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            Bakiye Durumu=
+                        </label>
+                        <div class="col-md-10 checkbox">
+                            <label>
+                                @Html.CheckBox("bakiye", false)
+                                <span class="cr">
+                                    <i class="cr-icon glyphicon glyphicon-ok"></i>
+                                </span>
+                                <span>Bakiye kontrol edildi mi?</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

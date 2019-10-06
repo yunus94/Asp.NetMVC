@@ -15,6 +15,10 @@
     </div>
     <div class="row">
         <div class="col-md-6">
+            <div>
+                @Html.ActionLink("Yeni Kişi", "New", "Person", null, new { @class = "btn btn-primary" })
+                <br /><br />
+            </div>
             <ul class="list-group">
                 <li class="list-group-item active">
                     Kişiler
@@ -22,14 +26,18 @@
                 @foreach (var a in Model.Persons)
                 {
                     <li class="list-group-item">
-                        @(a.Name + " " + a.SurName) (<i>@a.Age</i>)
+                        <span class="glyphicon glyphicon-user green"></span> @(a.Name + " " + a.SurName) (<i>@a.Age</i>)
                     </li>
                 }
 
             </ul>
         </div>
         <div class="col-md-6">
-           
+            <div>
+                @Html.ActionLink("Yeni Adres", "New", "Address", null, new { @class = "btn btn-primary" })
+                <br /><br />
+            </div>
+
             <ul class="list-group">
                 <li class="list-group-item active">
                     Adresler
@@ -37,7 +45,7 @@
                 @foreach (var a in Model.Addresses)
                 {
                     <li class="list-group-item">
-                        @a.AddressDefinition (<i>@(a.Persons.Name+" "+a.Persons.SurName)</i>)
+                        <span class="glyphicon glyphicon-home red"></span> @a.AddressDefinition (<i>@(a.Persons.Name + " " + a.Persons.SurName)</i>)
                     </li>
                 }
 

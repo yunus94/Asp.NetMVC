@@ -1,0 +1,43 @@
+﻿@model EntityFrameWork_CodeFirst.Models.Person
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Yeni Kişi</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    <div class="input-group">
+        <span class="input-group-addon" id="txtName">İsim</span>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "İsminiz", aria_describedby = "txtName" })
+    </div>
+    <br />
+
+    <div class="input-group">
+        <span class="input-group-addon" id="txtSurName">Soyisim</span>
+        @Html.TextBoxFor(x => x.SurName, new { @class = "form-control", placeholder = "Soyisminiz", aria_describedby = "txtSurName" })
+    </div>
+    <br />
+
+    <div class="input-group">
+        <span class="input-group-addon" id="txtAge">Yaş</span>
+        @Html.TextBoxFor(x => x.Age, new { @class = "form-control", placeholder = "Yaşınız", aria_describedby = "txtAge" })
+    </div>
+    <br />
+
+    <div class="input-group">
+        <input type="submit" name="name" value="Kaydet" class="btn btn-success" />
+    </div>
+
+    <div class="input-group">
+
+        @if (ViewBag.Result != null)
+        {
+
+            <div class="alert alert-@ViewBag.Status" role="alert">
+                @ViewBag.Result
+            </div>
+        }
+    </div>
+
+}

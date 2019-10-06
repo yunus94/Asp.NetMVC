@@ -25,9 +25,11 @@
                 </li>
                 @foreach (var a in Model.Persons)
                 {
-                    <li class="list-group-item">
-                        <span class="glyphicon glyphicon-user green"></span> @(a.Name + " " + a.SurName) (<i>@a.Age</i>)
-                    </li>
+                <li class="list-group-item">
+                    @Html.ActionLink("Düzenle", "Edit", "Person", new { personId = a.ID }, new { @class = "btn btn-warning btn-xs" })
+                    @Html.ActionLink("Sil", "Delete", "Person", new { personId = a.ID }, new { @class = "btn btn-danger btn-xs" })
+                    <span class="glyphicon glyphicon-user green"></span> @(a.Name + " " + a.SurName) (<i>@a.Age</i>)
+                </li>
                 }
 
             </ul>
@@ -44,9 +46,11 @@
                 </li>
                 @foreach (var a in Model.Addresses)
                 {
-                    <li class="list-group-item">
-                        <span class="glyphicon glyphicon-home red"></span> @a.AddressDefinition (<i>@(a.Persons.Name + " " + a.Persons.SurName)</i>)
-                    </li>
+                <li class="list-group-item">
+                    @Html.ActionLink("Düzenle", "Edit", "Address", new { adresId = a.ID }, new { @class = "btn btn-warning btn-xs" })
+                    @Html.ActionLink("Sil", "Delete", "Address", new { adresId = a.ID }, new { @class = "btn btn-danger btn-xs" })
+                    <span class="glyphicon glyphicon-home red"></span> @a.AddressDefinition (<i>@(a.Persons.Name + " " + a.Persons.SurName)</i>)
+                </li>
                 }
 
             </ul>

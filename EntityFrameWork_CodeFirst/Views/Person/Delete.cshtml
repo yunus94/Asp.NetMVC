@@ -1,0 +1,44 @@
+﻿@model EntityFrameWork_CodeFirst.Models.Person
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Kişi Silme</h2>
+<hr />
+<p>Aşağıdaki kişi kaydını silmek istediğinizden emin misiniz?</p>
+
+
+<table>
+    <tr>
+        <td><b>İsim:</b></td>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <td><b>Soyisim:</b></td>
+        <td>@Model.SurName</td>
+    </tr>
+    <tr>
+        <td><b>Yaş:</b></td>
+        <td>@Model.Age</td>
+    </tr>
+</table>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x=>x.ID)
+    <div class="input-group">
+        <input type="submit" value="Sil" class="btn btn-success" />
+    </div>
+    <br />
+}
+<div class="input-group">
+
+    @if (ViewBag.Result != null)
+    {
+
+        <div class="alert alert-@ViewBag.Status" role="alert">
+            @ViewBag.Result
+        </div>
+    }
+</div>
+
+

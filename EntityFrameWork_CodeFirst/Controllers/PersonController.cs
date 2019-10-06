@@ -37,5 +37,66 @@ namespace EntityFrameWork_CodeFirst.Controllers
 
             return View();
         }
+
+        public ActionResult Edit(int? personId)
+        {
+            Person person = null;
+            if (personId!=null)
+            {
+                DataBaseContext db = new DataBaseContext();
+                person = db.Persons.Where(x => x.ID == personId).FirstOrDefault();
+            }
+            return View(person);
+        }
+        [HttpPost]
+        public ActionResult Edit(Person model, int personId)
+        {
+            DataBaseContext db = new DataBaseContext();
+            Person person = db.Persons.Where(x => x.ID == personId).FirstOrDefault();
+            if (person != null)
+            {
+                person.Name = model.Name;
+                person.SurName = model.SurName;
+                person.Age = model.Age;
+
+                int sonuc = db.SaveChanges();
+
+                if (sonuc > 0)
+                {
+                    ViewBag.Result = "Kişi başarılı bir şekilde güncellenmiştir.";
+                    ViewBag.Status = "success";
+                }
+                else
+                {
+                    ViewBag.Result = "Kişi güncellenemedi.";
+                    ViewBag.Status = "danger";
+                }
+            }
+            return View();
+        }
+
+       [HttpGet]
+        public ActionResult Delete(int? personId)
+        {
+            Person person = null;
+            if (personId!=null)
+            {
+                DataBaseContext db = new DataBaseContext();
+                person = db.Persons.Where(x => x.ID == personId).FirstOrDefault();
+            }
+            return View(person);
+        }
+        [HttpPost,ActionName("Delete")]
+        public ActionResult DeleteOk(int? personId)
+        {
+            if (personId != null)
+            {
+                DataBaseContext db = new DataBaseContext();
+                Person person = db.Persons.Where(x => x.ID == personId).FirstOrDefault();
+                db.Persons.Remove(person);
+                db.SaveChanges();
+            }
+            return RedirectToAction("HomePage","Home");
+        }
     }
 }

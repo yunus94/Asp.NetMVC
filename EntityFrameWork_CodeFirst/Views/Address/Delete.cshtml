@@ -1,0 +1,40 @@
+﻿@model EntityFrameWork_CodeFirst.Models.Address
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Adres Silme</h2>
+<hr />
+<p>Aşağıdaki adres kaydını silmek istediğinizden emin misiniz?</p>
+
+
+<table>
+    <tr>
+        <td><b>Kişi:</b></td>
+        <td>@(Model.Persons.Name+" "+Model.Persons.SurName)</td>
+    </tr>
+    <tr>
+        <td><b>Adres:</b></td>
+        <td>@Model.AddressDefinition</td>
+    </tr>
+</table>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.ID)
+    <div class="input-group">
+        <input type="submit" value="Sil" class="btn btn-success" />
+    </div>
+    <br />
+}
+<div class="input-group">
+
+    @if (ViewBag.Result != null)
+    {
+
+        <div class="alert alert-@ViewBag.Status" role="alert">
+            @ViewBag.Result
+        </div>
+    }
+</div>
+
+

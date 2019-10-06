@@ -1,25 +1,23 @@
 ﻿@model EntityFrameWork_CodeFirst.Models.Address
 @{
-    ViewBag.Title = "New";
+    ViewBag.Title = "Edit";
 }
 
-<h2>Yeni Adres</h2>
+<h2>Adres Düzenle</h2>
 <hr />
 @using (Html.BeginForm())
 {
     <div class="input-group">
         <span class="input-group-addon" id="txtAddress">Adres</span>
-        @Html.TextAreaFor(x => x.AddressDefinition, new { @class = "form-control", placeholder = "Adresiniz", aria_describedby = "txtAddress",cols="30",rows="10" })
+        @Html.TextAreaFor(x => x.AddressDefinition, new { @class = "form-control", placeholder = "Adresiniz", aria_describedby = "txtAddress", cols = "30", rows = "10" })
     </div>
     <br />
 
     <div class="input-group">
         <span class="input-group-addon" id="ddlPerson">Kişi</span>
-        @Html.DropDownListFor(x => x.Persons.ID, (List<SelectListItem>)ViewBag.person , new { @class = "form-control", aria_describedby = "ddlPerson" })
+        @Html.DropDownListFor(x => x.Persons.ID, (List<SelectListItem>)ViewBag.person, new { @class = "form-control", aria_describedby = "ddlPerson" })
     </div>
     <br />
-
-   
 
     <div class="input-group">
         <input type="submit" value="Kaydet" class="btn btn-success" />

@@ -63,5 +63,76 @@ namespace EntityFrameWork_CodeFirst.Controllers
             ViewBag.person = TempData["person"];
             return View();
         }
+        public ActionResult Edit(int? adresId)
+        {
+            Address address = null;
+            if (adresId!=null)
+            {
+                DataBaseContext db = new DataBaseContext();
+
+                List<SelectListItem> personList =
+                    (from person in db.Persons.ToList()
+                     select new SelectListItem()
+                     {
+                         Text = person.Name + " " + person.SurName,
+                         Value = person.ID.ToString()
+                     }).ToList();
+
+                TempData["person"] = personList;
+                ViewBag.person = personList;
+
+                 address = db.Addresses.Where(x => x.ID == adresId).FirstOrDefault();
+            }
+            return View(address);
+        }
+        [HttpPost]
+        public ActionResult Edit(Address model, int? adresId)
+        {
+            DataBaseContext db = new DataBaseContext();
+            Person person = db.Persons.Where(x => x.ID == model.Persons.ID).FirstOrDefault();
+            Address address = db.Addresses.Where(x => x.ID == adresId).FirstOrDefault();
+            if (address != null)
+            {
+                address.Persons = person;
+                address.AddressDefinition = model.AddressDefinition;
+
+                int sonuc = db.SaveChanges();
+                if (sonuc > 0)
+                {
+                    ViewBag.Result = "Adres başarılı bir şekilde güncellenmiştir.";
+                    ViewBag.Status = "success";
+                }
+                else
+                {
+                    ViewBag.Result = "Adres güncellenemedi.";
+                    ViewBag.Status = "danger";
+                }
+            }
+            ViewBag.person = TempData["person"];
+            return View();
+        }
+
+        public ActionResult Delete(int? adresId)
+        {
+            Address address = null;
+            if (adresId != null)
+            {
+                DataBaseContext db = new DataBaseContext();
+                address = db.Addresses.Where(x => x.ID == adresId).FirstOrDefault();
+            }
+            return View(address);
+        }
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteOk(int? adresId)
+        {
+            if (adresId != null)
+            {
+                DataBaseContext db = new DataBaseContext();
+                Address address= db.Addresses.Where(x => x.ID == adresId).FirstOrDefault();
+                db.Addresses.Remove(address);
+                db.SaveChanges();
+            }
+            return RedirectToAction("HomePage", "Home");
+        }
     }
 }
